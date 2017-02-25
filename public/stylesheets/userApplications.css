@@ -1,0 +1,333 @@
+.currentAppPanel {
+    margin-top:0.5rem;
+    z-index:1;
+}
+.currentAppPanel>.panel-body {
+    background:whitesmoke;
+    padding-bottom:3rem;
+}
+.userDetailPanel {
+    text-align:left;
+}
+.userDetailPanel>.panel-body {
+    height:23rem;
+    margin-top:-0.5rem;
+    overflow-y:scroll;
+}
+.skillPanel {
+    padding:0;
+    text-align:left;
+}
+.skillPanel>.panel-body {
+    height:23rem;
+    overflow-y:scroll;
+
+}
+.jobPanel {
+z-index:0;
+}
+.panel-info {
+    width:100%;
+}
+
+.panel-info.panel-heading h6{
+    text-align:left;
+    float:left;
+}
+.skillsRow {
+    padding-top:0;
+    padding-bottom:0;
+}
+.applicationDetails {
+    color:dimgray;
+    width:90%;
+    font-size:0.9rem;
+    text-align:left;
+}
+.appContainer-fixed {
+    position: fixed;
+    opacity:1;
+    z-index:1;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    width: calc(100% - 17px);
+    height: calc(3em + 30px);
+    background: #B6C2C4;
+    text-align: center;
+}
+.folder__icon {
+    position: absolute;
+    top: -0.05em;
+    left: 0.55em;
+    font-size:3.7rem;
+    color: #4e4e4f;
+}
+
+.appContainer-fixed h3 {
+    position: absolute;
+    top:1.2em;
+    left:calc(1.9em + 3.2rem);
+    color:#4e4e4f;
+    font-size:1.3rem;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.appBank__count {
+    position: absolute;
+    top: 1.6em;
+    left: 2.55em;
+    padding: 0.75em;
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: bold;
+    font-family: 'Maven Pro', sans-serif;
+    line-height: 0.5;
+    color:#B6C2C4;
+}
+
+.appBank {
+    position: absolute;
+    left: 50%;
+    margin: 0 auto;
+    margin-left: -4.5em;
+    width: 9em;
+    height: 3em;
+    font-weight: 400;
+    font-family: 'Maven Pro', sans-serif;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.appBank--active {
+    /* center on screen (padding of parent, half of summary height, half of viewport height) */
+    -webkit-transform: translate3d(0, 15px, 0) translate3d(0, 30vh, 0) translate3d(0, -35vh, 0);
+    transform: translate3d(0, 15px, 0) translate3d(0, 30vh, 0) translate3d(0, -35vh, 0);
+}
+
+a.appBank__button {
+    position: relative;
+    z-index: 10;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    border-radius: 30px;
+    color: whitesmoke;
+    line-height: 3em;
+    -webkit-transition: background-color 0.6s cubic-bezier(0.7, 0, 0.3, 1), -webkit-transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: background-color 0.6s cubic-bezier(0.7, 0, 0.3, 1), transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+a.appBank__button:hover,
+a.appBank__button:focus {
+    outline: none;
+    color: #fff;
+}
+
+.appBank--active a.appBank__button {
+    background-color: #84CC8A;
+    color:#3f3d3d;
+    width:20rem;
+    margin-left:-5rem;
+    -webkit-transform: perspective(1000px) translate3d(0, -1em, 0);
+    transform: perspective(1000px) translate3d(0, -2.3em, 0);
+}
+
+.appBank__text-inner {
+    font-weight: bold;
+}
+
+.appBank__final-text,
+.appBank__initial-text {
+    -webkit-transition: opacity 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: opacity 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.appBank--active .appBank__initial-text {
+    opacity: 0;
+}
+
+.appBank__final-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+}
+.appBank__final-text>.skillsFormButton {
+    display:none;
+}
+
+.appBank--active .appBank__final-text {
+    opacity: 1;
+
+}
+.appBank--active .appBank__final-text>.skillsFormButton {
+    opacity: 1;
+    display:block;
+}
+
+.appBank__results,
+.appBank__results::before {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0%, 0);
+    transform: translate3d(-50%, 0%, 0);
+}
+
+.appBank__results {
+    min-width: 320px;
+    max-width: 1400px;
+    width: 95vw;
+    height: 90vh;
+    pointer-events: none;
+}
+
+.appBank--active .appBank__results {
+    pointer-events: auto;
+    position:fixed;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    display:inline-block;
+}
+
+.appBank__results::before {
+    content: '';
+    z-index: -1;
+    width: 9em;
+    height: 3em;
+    border-radius: 30px;
+    background: #4e4e4f;
+    -webkit-transition: width 0.6s cubic-bezier(0.7, 0, 0.3, 1), height 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: width 0.6s cubic-bezier(0.7, 0, 0.3, 1), height 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.appBank--active .appBank__results::before {
+    width: 100%;
+    height: 100%;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.appBank__results-inner {
+    padding: 1em 1.5em;
+    outline:none;
+}
+
+.appBank__close {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    border: none;
+    text-indent: 100%;
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.appBank__close:focus {
+    outline: none;
+}
+
+.appBank--active .appBank__close {
+    opacity: 1;
+    -webkit-transition: opacity 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.015s;
+    transition: opacity 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.015s;
+}
+
+.appBank__close .icon {
+    position: absolute;
+    font-size:1.1rem;
+    top: 0;
+    left: 0;
+    color: #fff;
+    text-indent: 0;
+}
+
+.appBank__close:hover .icon {
+    color: #e48895;
+}
+
+.appBank__summary {
+    margin: 0.5em 0 0.75em;
+    width: 100%;
+    font-size: 1em;
+    opacity:0;
+
+}
+
+.appBank--active .appBank__summary {
+    opacity:1;
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.7, 0, 0.3, 1), opacity 1s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: transform 0.1s cubic-bezier(0.7, 0, 0.3, 1), opacity 1s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.appBank__action {
+    float:right;
+    border: none;
+    background: none;
+    margin-top:-2rem;
+    right:0;
+    top:0;
+}
+
+.appBank__action:focus {
+    outline: none;
+}
+
+.appBank__action .icon {
+    color: #e48895;
+    font-size:1.7rem;
+
+}
+@media screen and (max-width:45em) {
+    .appContainer-fixed h3 {
+        display:none;
+    }
+}
+
+@media screen and (max-width:26em) {
+
+    .appBank {
+    }
+    .appBank__initial-text {
+        font-size:0.78rem;
+    }
+    .appBank--active {
+        margin-top:0rem;
+        -webkit-transform: translate3d(9px, -60px, 0);
+        transform: translate3d(9px, -60px, 0);
+    }
+    .appContainer-fixed h3 {
+        display:none;
+    }
+    .appBank__results::before {
+        border-radius: 0%;
+    }
+
+    .appBank__summary {
+        margin-top: 2em;
+        height:100vh;
+    }
+
+    .appBank--active.appBank__results-inner {
+        padding: 1em 1em;
+        font-size:0.5rem;
+        width: calc(100vw + 17px);
+        height:100%;
+    }
+    .appBank--active > .appBank__results {
+        overflow-y:scroll;
+    }
+
+    .appBank__results {
+        width:100vw;
+    }
+}
+

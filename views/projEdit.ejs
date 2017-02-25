@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../stylesheets/vendor/foundation.min.css">
+    <link rel="stylesheet" href="../stylesheets/vendor/motion-ui.css"/>
+    <link rel='stylesheet' href='../stylesheets/foundation-icons/foundation-icons.css' />
+    <link rel="stylesheet" href="../stylesheets/monthly.css">
+    <link rel="stylesheet" href="../stylesheets/managers.css"> <! custom stylesheet>
+    <script src="../javascripts/vendor/modernizr.js"></script>
+</head>
+
+<body>
+
+<form action="../managers/projSave" method="POST" id="submit">
+    <fieldset class="fieldset">
+        <legend><h5><strong>Project Details</strong></h5></legend>
+        <div class="row">
+            <div class="large-3 columns end">
+                <label><h6>Project ID</h6></label>
+                <input type="text" value="<%=jobId%>" name="idProject" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label><h6>Project Name</h6></label>
+                <input type="text" value="<%= jobBoardData.projTitle %>" placeholder="Enter Project Name" name="projTitle" />
+            </div>
+            <div class="large-6 columns ">
+                <label><h6>Project Manager</h6></label>
+                <input type="text" value="<%= jobBoardData.projManager %>" placeholder="Enter Employee Name" name="projManager" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label><h6>General Description </h6>(Please limit to ~200 characters)</label>
+                <textarea name="projDescription" rows="5"><%=jobBoardData.projDescription %></textarea>
+            </div>
+            <div class="large-6 columns">
+                <label><h6>Project Brief </h6>(Please separate specifics by ' | ')</label>
+                <textarea name="projBrief" rows="5"><%=jobBoardData.projBrief %></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label><h6>Duties</h6></label>
+                <textarea name="duties" rows="6"><%=jobBoardData.duties %></textarea>
+            </div>
+            <div class="large-6 columns">
+                <label><h6>Tasks </h6>(Please separate tasks by ' | ')</label>
+                <textarea name="tasks" rows="6"><%=jobBoardData.tasks %></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label><h6>Education and Experience</h6></label>
+                <textarea name="eduExp" rows="3"><%=jobBoardData.eduExp %></textarea>
+            </div>
+            <div class="large-6 columns">
+                <label><h6>Preferred Skills </h6>(Please separate preferred skills by ' | ')</label>
+                <textarea name="skills" rows="3"><%=jobBoardData.skills %></textarea>
+            </div>
+        </div>
+        <div class="row expanded">
+            <div class="large-4 large-centered columns">
+                <div class="button-group">
+                    <button type="submit"  class="button success expanded" data-close aria-label="Close modal" id="btnUpdate">Update Position</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<footer class="footer">
+    <div class="row full-width">
+        <div class="small-12 medium-3 large-4 columns">
+            <a href="http://www.amdocs.com/pages/homepage.aspx"><i class="fi-home"></i></a>
+            <h5>Amdocs is the market leader in customer experience software solutions and services for the world’s largest communications, entertainment and media service providers.</h5>
+        </div>
+        <div class="small-12 medium-3 large-4 columns">
+            <a href="https://www.facebook.com/Amdocs/"><i class="fi-social-facebook"></i></a>
+            <a href="https://twitter.com/Amdocs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fi-social-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/amdocs"><i class="fi-social-linkedin"></i></a>
+            <a href="https://www.youtube.com/user/amdocsinc"><i class="fi-social-youtube"></i></a>
+            <a href="https://plus.google.com/+amdocs"><i class="fi-social-google-plus"></i></a>
+            <h5>Follow us on social media for updates and upcoming events! </h5>
+        </div>
+        <div class="small-6 medium-3 large-2 columns">
+            <h4>About</h4>
+            <ul class="footer-links">
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Partners &amp; Alliances</a></li>
+                <li><a href="#">Awards &amp; Recognition</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ's</a></li>
+            </ul>
+        </div>
+        <div class="small-6 medium-3 large-2 columns">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+                <li><a href="#">Global Offices</a></li>
+                <li><a href="#">Amdocs Careers</a></li>
+                <li><a href="#">Partner Program</a></li>
+                <li><a href="#">Customer Support</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row full-width">
+        <h4>© 2016 Amdocs Inc. All rights reserved.</h4>
+    </div>
+</footer>
+
+
+
+<script src="../javascripts/vendor/jquery.js"></script>
+<script src="../javascripts/vendor/what-input.js"></script>
+<script src="../javascripts/vendor/foundation.min.js"></script>
+<script src="../javascripts/vendor/motion-ui.js"></script>
+<script src="../javascripts/monthly.js"></script>
+<script src="../javascripts/my_calendar.js"></script>
+<script>
+    $(document).foundation();
+</script>
+
+
+</body>
+</html>

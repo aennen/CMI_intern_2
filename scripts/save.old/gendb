@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+
+
+node createSchema.js
+
+node createUserTable.js
+
+node createMediaObjectTable.js
+
+node createInternProfileTable.js
+
+#createContactsTable.js
+#create_database.js
+#createEventsTable.js
+#createInternApplicationTable.js
+#createJobBoardTable.js

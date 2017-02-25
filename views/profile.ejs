@@ -1,0 +1,58 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title><%= title %></title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel='stylesheet' href='stylesheets/vendor/foundation.min.css'/>
+	<style>
+		body 		{ padding-top:80px; word-wrap:break-word; }
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="page-header text-center">
+		<h1><span class="fa fa-user"style="padding-right:2%;"></span><%= title %></h1>
+        <a href="#" onclick="history.go(-1);return true;" class="btn btn-default btn-lg">Back</a>
+	</div>
+
+
+		<!-- LOCAL INFORMATION -->
+        <table>
+
+        <tr><td width="50%">
+                <h3>Profile Details</h3>
+					<p>
+						<strong>Name</strong>: <%= userData.nameFirst %> <%=userData.nameLast%><br>
+                        <strong>Resume</strong>: <a href="uploads/?fileName=<%=userData.resLink%>"><%= userData.resLink %></a><br>
+                        <strong>Email</strong>: <%= userData.email %><br>
+                        <strong>Address</strong>: <%= userData.address %><br>
+                        <strong>City</strong>: <%= userData.city %><br>
+                        <strong>State</strong>: <%= userData.stateCode %><br>
+                        <strong>ZIP</strong>: <%= userData.zip %><br>
+                        <strong>Phone</strong>: <%= userData.phone %><br>
+                        <strong>Veteran Status</strong>: <%= userData.usVet %><br>
+                        <strong>US Work Authorization</strong>: <%= userData.usAuth %><br>
+                        <strong>Industry Preference</strong>: <%= userData.industryPref %><br>
+                        <strong>Foreign Language Skills</strong>: <%= userData.langSkills %><br>
+                        <strong>School/University</strong>: <%= userData.school %><br>
+                        <strong>Degree</strong>: <%= userData.degree %><br>
+                        <strong>Major</strong>: <%= userData.major %><br>
+                        <strong>Interests</strong>: <%= userData.interest %><br>
+                        <strong>Expected Graduation</strong>: <%= userData.gradDate %>
+					</p>
+        </td>
+            <td width="50%" align="left">
+                <% for(x=0; x < skillSet.length; x++) { %>
+                <strong>Skill Set</strong>: <%= skillSet[x] %>
+                <strong>Proficiency</strong>: <%= profSet[x] %><br>
+                <% } %>
+            </td>
+        </tr>
+        </table>
+	</div>
+</body>
+</html>

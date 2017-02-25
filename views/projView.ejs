@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../stylesheets/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../stylesheets/vendor/foundation.min.css">
+    <link rel="stylesheet" href="../stylesheets/vendor/motion-ui.css"/>
+    <link rel="stylesheet" href="../stylesheets/foundation-icons/foundation-icons.css" />
+    <link rel="stylesheet" href="../stylesheets/monthly.css">
+    <link rel="stylesheet" href="../stylesheets/applicantTable.css" />
+    <link rel="stylesheet" href="../stylesheets/managers.css"> <! custom stylesheet>
+    <script src="../javascripts/vendor/modernizr.js"></script>
+</head>
+
+
+<body>
+<div class="top-bar" id="banner_top">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text"><img src="../images/logo-black.png" class="logo" /></li>
+            <li><h1>Project Managers</h1></li>
+        </ul>
+    </div>
+</div>
+
+<div id="menu_select"></div>
+<div data-sticky-container>
+    <div class="sticky" data-sticky data-top-anchor="menu_select:top" data-margin-top="0">
+        <nav data-magellan class="sticky-mag">
+            <ul class="horizontal menu expanded">
+                <li><a href="../managers/" id="menu_bar"><h5><strong>< Back</strong></h5></a></li>
+                <li><a href="#first" id="menu_bar"><h5><strong>Project Detail</strong></h5></a></li>
+                <li><a href="#second" id="menu_bar"><h5><strong>Applications</strong></h5></a></li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<div id="main">
+    <div class="sections">
+
+        <section class="content" id="first" data-magellan-target="first">
+            <h2>Project Information</h2>
+            <hr>
+            <div class="tab_contain">
+                <div class="row expanded" id="app_container">
+
+                    <div class="tabs-content" data-tabs-content="example-vert-tabs" id="vert_con">
+
+                        <div class="tabs-panel is-active" id="panel1v">
+                            <div class="title-bar" id="title_bar" >
+                                <div class="title-bar-left"><h5><strong><%= jobBoardData[0].projTitle %> / <%= jobBoardData[0].projManager %></strong></h5></div>
+                                <div class="title-bar-right"></div>
+                            </div>
+
+                            <div class="detail_container">
+                                <div class="row">
+                                    <div class="large-12 medium-12 columns">
+                                        <div class="title-bar" id="skill_bar" >
+                                            <div class="title-bar-left"><h6>Project Detail</h6></div>
+                                            <div class="title-bar-right"></div>
+                                        </div>
+                                        <div id="text" >
+                                            <h6><strong>Description</strong></h6>
+
+                                            <%= jobBoardData[0].projDescription %>
+
+                                            <ol>
+                                                <% { var projBrief = jobBoardData[0].projBrief; %>
+                                                <% var listItems = projBrief.split(' | ')%>
+                                                <% for(var j = 0; j < listItems.length; j++) { %>
+                                                <li><%= listItems[j] %></li>
+                                                <% }} %>
+
+                                            </ol>
+                                            <hr>
+                                            <h6><strong>Duties</strong></h6>
+
+                                            <%= jobBoardData[0].duties %>
+                                            <hr>
+
+                                            <h6><strong>Tasks</strong></h6>
+                                            <ul>
+                                                <% { var tasks = jobBoardData[0].tasks%>
+                                                <% var taskItems = tasks.split(' | ');%>
+                                                <% for(var j = 0; j < taskItems.length; j++) { %>
+                                                <li><%= taskItems[j] %></li>
+                                                <% }} %>
+                                            </ul>
+                                            <hr>
+                                            <h6><strong>Education &amp; Experience</strong></h6>
+
+                                            <%= jobBoardData[0].eduExp %>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="second" data-magellan-target="second">
+            <h2>Current Applicants</h2>
+            <hr>
+            <div class="applicantTableContainer">
+                <table class="applicantTable" style="width:100%"  >
+                    <thead>
+                        <tr>
+                            <th >Link</th>
+                            <th >Name</th>
+                            <th>Email</th>
+                            <th>Major</th>
+                            <th>Work Auth.</th>
+                            <th>Resume</th>
+                            <th>Skills</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    <% for (var j = 0; j < projRefData.length; j++) { %>
+                        <tr>
+                            <td align="left"><a href="../applicantProfile?userId=<%=projRefData[j].id_fk%>&projId=<%=jobBoardData[0].idProject %>">View</a></td>
+                            <td align="left"><%= projRefData[j].nameUser %></td>
+                            <td align="left"><%= projRefData[j].email %></td>
+                            <td align="left"><%= projRefData[j].major %></td>
+                            <td align="left"><%= projRefData[j].visaStat %></td>
+                            <td align="left"><a href="../uploads?fileName=<%=projRefData[j].resume%>"><%= projRefData[j].resume %></a></td>
+                            <td align="left"><%= projRefData[j].proficiency %></td>
+                            <td align="left"><a href="../deleteApplication?userId=<%=projRefData[j].id_fk%>&jobId=<%=jobId%>"><i class="fi-trash"></i></a></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
+    </div>
+</div>
+<footer class="footer">
+    <div class="row full-width">
+        <div class="small-12 medium-3 large-4 columns">
+            <a href="http://www.amdocs.com/pages/homepage.aspx"><i class="fi-home"></i></a>
+            <h5>Amdocs is the market leader in customer experience software solutions and services for the world’s largest communications, entertainment and media service providers.</h5>
+        </div>
+        <div class="small-12 medium-3 large-4 columns">
+            <a href="https://www.facebook.com/Amdocs/"><i class="fi-social-facebook"></i></a>
+            <a href="https://twitter.com/Amdocs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fi-social-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/amdocs"><i class="fi-social-linkedin"></i></a>
+            <a href="https://www.youtube.com/user/amdocsinc"><i class="fi-social-youtube"></i></a>
+            <a href="https://plus.google.com/+amdocs"><i class="fi-social-google-plus"></i></a>
+            <h5>Follow us on social media for updates and upcoming events! </h5>
+        </div>
+        <div class="small-6 medium-3 large-2 columns">
+            <h4>About</h4>
+            <ul class="footer-links">
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Partners &amp; Alliances</a></li>
+                <li><a href="#">Awards &amp; Recognition</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ's</a></li>
+            </ul>
+        </div>
+        <div class="small-6 medium-3 large-2 columns">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+                <li><a href="#">Global Offices</a></li>
+                <li><a href="#">Amdocs Careers</a></li>
+                <li><a href="#">Partner Program</a></li>
+                <li><a href="#">Customer Support</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row full-width">
+        <h4>© 2016 Amdocs Inc. All rights reserved.</h4>
+    </div>
+</footer>
+
+
+
+<script src="../javascripts/vendor/jquery.js"></script>
+<script src="../javascripts/vendor/what-input.js"></script>
+<script src="../javascripts/vendor/bootstrap.min.js"></script>
+<script src="../javascripts/vendor/foundation.min.js"></script>
+<script src="../javascripts/vendor/motion-ui.js"></script>
+<script src="../javascripts/monthly.js"></script>
+<script src="../javascripts/my_calendar.js"></script>
+<script>
+    $(document).foundation();
+</script>
+
+
+</body>
+</html>

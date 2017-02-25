@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../stylesheets/vendor/foundation.min.css"/>
+    <link rel="stylesheet" href="../stylesheets/vendor/motion-ui.css"/>
+    <link rel="stylesheet" href='../stylesheets/foundation-icons/foundation-icons.css' />
+    <link rel="stylesheet" href="../stylesheets/monthly.css">
+    <link rel="stylesheet" href="../stylesheets/managers.css"> <! custom stylesheet>
+    <script src="../javascripts/vendor/modernizr.js"></script>
+</head>
+
+<body>
+<div class="top-bar" id="banner_top">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text"><img src="../images/logo-black.png" class="logo" /></li>
+            <li><h1>Project Managers</h1></li>
+        </ul>
+    </div>
+</div>
+
+<div id="menu_select"></div>
+<div data-sticky-container>
+    <div class="sticky" data-sticky data-top-anchor="menu_select:top" data-margin-top="0">
+        <nav data-magellan class="sticky-mag">
+            <ul class="horizontal menu expanded">
+                <li><a href="#first" id="menu_bar"><h5><strong>Dashboard</strong></h5></a></li>
+                <li><a href="#second" id="menu_bar"><h5><strong>Events</strong></h5></a></li>
+                <li><a href="../" id="menu_bar"><h5><strong><em>Intern Site ></em></strong></h5></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<div id="main">
+    <div class="sections">
+        <section id="first" data-magellan-target="first">
+            <div class="currentProjBar">
+                <h2>Current Projects</h2>
+                <!--
+                <div class="empIdForm">
+                    <form action="../myProjects" method="POST">
+                        <input type="text" placeholder="Employee Name" name="filterManager"/>
+                        <button type="submit" class="button info" id="btnFilter">Filter My Projects</button>
+                    </form>
+                </div>
+                -->
+            </div>
+            <hr />
+            <div class="projContainer">
+            <table class="responsive">
+                <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Owner</th>
+                    <th>Applicants</th>
+                    <th width="auto"><div class="addProjSect">
+                            <a data-open="jobModal"><button type="button" class="expanded success button" id="btnAdd"><i class="fi-plus"></i>  New Project</button></a>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% for(var i=0; i < jobBoardData.length; i++) { %>
+                <tr>
+                    <td><%= jobBoardData[i].projTitle %></td>
+                    <td><%= jobBoardData[i].projManager %></td>
+                    <td><span class="badge"><%=projRefData.length %></span></td>
+                    <td>
+                        <div class="expanded medium button-group" id="btnGrp">
+                            <a href="projView?jobID=<%=i+1%>"><button type="button" class="secondary button" id="btnView"><i class="fi-eye"></i></button></a>
+                            <a href="projEdit?jobID=<%=i+1%>"><button type="button" class="secondary button" id="btnEdit"><i class="fi-pencil"></i></button></a>
+                            <a href="projDelete?jobID=<%=i+1%>"><button type="button" class="secondary button" id="btnDelete"><i class="fi-trash"></i></button></a>
+                        </div>
+                    </td>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+
+        <section id="second" data-magellan-target="second">
+            <h2>Career Fairs and Events</h2>
+            <hr/>
+            <div class="projContainer">
+                <table class="responsive">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Event Name</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                        <th width="auto"><div class="addProjSect">
+                                <a data-open="eventsModal"><button type="button" class="expanded success button" id="btnAdd"><i class="fi-plus"></i>  New Event</button></a>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <% for(var i=0; i < eventsData.length; i++) { %>
+                    <tr>
+                        <td><%= eventsData[i].eventDate %></td>
+                        <td><%= eventsData[i].eventTitle %></td>
+                        <td><%=eventsData[i].eventLocation%></td>
+                        <td><%=eventsData[i].startTime%> - <%=eventsData[i].endTime%></td>
+                        <td>
+                            <div class="expanded medium button-group" id="btnGrp">
+                                <a href="eventEdit?eventID=<%=eventsData[i].idEvent%>"><button type="button" class="secondary button" id="evtbtnEdit"><i class="fi-pencil"></i></button></a>
+                                <a href="eventDelete?eventID=<%=eventsData[i].idEvent%>"><button type="button" class="secondary button" id="btnDelete"><i class="fi-trash"></i></button></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!---------------------------------create intership position modal-------------->
+        <div class="large reveal" id="jobModal" data-reveal>
+            <div class="form_container">
+                <form action="jobData" method="POST" id="submit">
+                    <fieldset class="fieldset">
+                        <legend><h5><strong>Project Details</strong></h5></legend>
+                        <div class="row">
+                            <div class="large-3 columns end">
+                                <label><h6>Project ID</h6></label>
+                                <% { var i = jobBoardData.length %>
+                                <input type="text" value="P-000<%=i+1%>" name="idProject" />
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <label><h6>Project Name</h6></label>
+                                <input type="text" value="" placeholder="Enter Project Name" name="projTitle" />
+                            </div>
+                            <div class="large-6 columns ">
+                                <label><h6>Project Manager</h6></label>
+                                <input type="text" value="" placeholder="Enter Employee Name" name="projManager" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <label><h6>General Description </h6>(Please limit to ~200 characters)</label>
+                                <textarea rows="5" type="text"  value="" placeholder="Project Description" name="projDescription" ></textarea>
+                            </div>
+                            <div class="large-6 columns">
+                                <label><h6>Project Brief </h6>(Please separate specifics by ' | ')</label>
+                                <textarea rows="5" type="text" value="" placeholder="Specific 1 | Specific 2 | etc.." name="projBrief" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <label><h6>Duties</h6></label>
+                                <textarea rows="5" type="text" placeholder="Write Duties Here" name="duties" ></textarea>
+                            </div>
+                            <div class="large-6 columns">
+                                <label><h6>Tasks </h6>(Please separate tasks by ' | ')</label>
+                                <textarea rows="5" type="text" placeholder="Task 1 | Task 2 | etc.. " name="tasks" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <label><h6>Education and Experience</h6></label>
+                                <textarea rows="5" type="text" placeholder="Education Requirements Here" name="eduExp" ></textarea>
+                            </div>
+                            <div class="large-6 columns">
+                                <label><h6>Preferred Skills </h6>(Please separate preferred skills by ' | ')</label>
+                                <textarea rows="5" type="text" placeholder="Skill 1 | Skill 2 | etc.. " name="skills" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row expanded">
+                            <div class="large-4 large-centered columns">
+                                <div class="button-group">
+                                    <button type="submit"  class="button success expanded" data-close aria-label="Close modal" id="btnCreate">Create Position</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <button class="close-button" data-close aria-label="Close modal" href="managers" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!------------ EVENTS MODAL ----------------------->
+        <div class="large reveal" id="eventsModal" data-reveal>
+            <div class="form_container">
+                <form action="eventData" method="POST" id="submit">
+                    <fieldset class="fieldset">
+                        <legend><h5><strong>Event Details</strong></h5></legend>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <label><h6>Event Name</h6></label>
+                                <input type="text" value="" placeholder="Enter Event Name" name="eventTitle" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <label><h6>Date</h6></label>
+                                <input type="text" value="" placeholder="MM/DD/YYY" name="eventDate" />
+                            </div>
+                            <div class="large-6 columns">
+                                <label><h6>Location</h6></label>
+                                <input type="text" value="" placeholder="Enter Location" name="eventLocation" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <label><h6>Start Time</h6></label>
+                                <input type="text" value="" placeholder="Enter Start Time" name="startTime" />
+                            </div>
+                            <div class="large-6 columns ">
+                                <label><h6>End Time</h6></label>
+                                <input type="text" value="" placeholder="Enter End Time" name="endTime" />
+                            </div>
+                        </div>
+
+                        <div class="row expanded">
+                            <div class="large-4 large-centered columns">
+                                <div class="button-group">
+                                    <button type="submit"  class="button success expanded" data-close aria-label="Close modal" id="btnCreate">Create Event</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <button class="close-button" data-close aria-label="Close modal" href="managers" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+
+
+    </div>
+</div>
+    <footer class="footer">
+        <div class="row full-width">
+            <div class="small-12 medium-3 large-4 columns">
+                <a href="http://www.amdocs.com/pages/homepage.aspx"><i class="fi-home"></i></a>
+                <h5>Amdocs is the market leader in customer experience software solutions and services for the world’s largest communications, entertainment and media service providers.</h5>
+            </div>
+            <div class="small-12 medium-3 large-4 columns">
+                <a href="https://www.facebook.com/Amdocs/"><i class="fi-social-facebook"></i></a>
+                <a href="https://twitter.com/Amdocs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fi-social-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/amdocs"><i class="fi-social-linkedin"></i></a>
+                <a href="https://www.youtube.com/user/amdocsinc"><i class="fi-social-youtube"></i></a>
+                <a href="https://plus.google.com/+amdocs"><i class="fi-social-google-plus"></i></a>
+                <h5>Follow us on social media for updates and upcoming events! </h5>
+            </div>
+            <div class="small-6 medium-3 large-2 columns">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Partners &amp; Alliances</a></li>
+                    <li><a href="#">Awards &amp; Recognition</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                </ul>
+            </div>
+            <div class="small-6 medium-3 large-2 columns">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Global Offices</a></li>
+                    <li><a href="#">Amdocs Careers</a></li>
+                    <li><a href="#">Partner Program</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row full-width">
+            <h4>© 2016 Amdocs Inc. All rights reserved.</h4>
+        </div>
+    </footer>
+
+    <script src="../javascripts/vendor/jquery.js"></script>
+    <script src="../javascripts/vendor/what-input.js"></script>
+    <script src="../javascripts/vendor/foundation.min.js"></script>
+    <script src="../javascripts/vendor/motion-ui.js"></script>
+    <script src="../javascripts/monthly.js"></script>
+    <script src="../javascripts/my_calendar.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>

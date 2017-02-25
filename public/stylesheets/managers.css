@@ -1,0 +1,363 @@
+body {
+    background:#F0EDE5;
+}
+.fieldset legend {
+    background:#F0EDE5;
+}
+
+.sections {
+    margin-top:1%;
+    width:85%;
+    margin-left:7.5%;
+    margin-bottom:5%;
+    display:block;
+}
+
+table {
+    text-align:left;
+    margin:auto;
+    width:85%;
+    height:auto;
+}
+
+tr {
+    padding-top:0;
+    padding-bottom:0;
+}
+.button {
+    margin:auto;
+}
+#evtbtnEdit {
+    border-top-left-radius:0.25rem;
+    border-bottom-left-radius:0.25rem;
+}
+#btnGrp {
+    display:block;
+    margin:auto;
+    padding-left:22.5%;
+
+}
+#btnAdd {
+    margin-top:0.3rem;
+    margin-right:0.5rem;
+}
+#btnView {
+    border-top-left-radius:0.25rem;
+    border-bottom-left-radius:0.25rem;
+}
+#btnDelete {
+    border-top-right-radius:0.25rem;
+    border-bottom-right-radius:0.25rem;
+}
+
+#btnAdd, #btnFilter, #addTimeBtn, #sendEmailBtn, #dashButton, #btnUpdate, #btnCreate {
+    border-radius:0.25rem;
+}
+#btnFilter {
+    margin-top:-0.5rem;
+}
+#dashButton {
+    margin-top:0.5rem;
+}
+.addProjSect {
+   margin-top:2%;
+}
+.currentProjBar h2 {
+    float:left;
+}
+.empIdForm {
+    float:right;
+    width:25%;
+    margin-top:1%;
+    height:auto;
+    display:inline;
+}
+.empIdForm input {
+    float:left;
+}
+.empIdForm button {
+    float:right;
+}
+#first {
+    padding-top:1.5rem;
+}
+.badge {
+    margin:auto;
+    width:1.65rem;
+    height:1.65rem;
+    font-size:0.8rem;
+}
+.fi-list {
+    font-size:2rem;
+    color:darkgray;
+
+}
+
+#addTimeBtn {
+    margin-top:1.85rem;
+}
+.nav_menu {
+    background-color:lightgray;
+}
+
+.horizontal li {
+    background-color:whitesmoke;
+    text-align:center;
+}
+
+#menu_bar h5 {
+    text-transform:uppercase;
+    letter-spacing:0.18rem;
+    color:dimgray;
+}
+
+.sect_container {
+    height:auto;
+    width:auto;
+    border-style:solid;
+    border-width:thick;
+    border-color:#c25b56;
+    margin-top:1rem;
+}
+
+section h2 {
+    padding-top:1rem;
+}
+
+
+#first h4 {
+    padding:1.5rem;
+    float:left;
+    width:68%;
+}
+
+#first img {
+    float:right;
+    width:30%;
+    margin-top:1rem;
+    margin-bottom:2rem;
+    margin-left:1rem;
+}
+
+#second h4{
+    padding:1.5rem;
+    float:right;
+    width:68%
+}
+
+#second img {
+    float:left;
+    width:30%;
+    height:3%;
+    margin-top:1rem;
+    margin-bottom:2rem;
+    margin-left:1rem;
+}
+
+#third h4 {
+    padding:1.5rem;
+    float:left;
+    width:60%;
+}
+
+#third img {
+    float:right;
+    width:35%;
+    margin-top:1rem;
+    margin-bottom:2rem;
+    margin-left:1rem;
+}
+
+#fourth h4{
+    padding:1.5rem;
+    float:right;
+    width:67%
+}
+
+#fourth img {
+    float:left;
+    width:30%;
+    height:3%;
+    margin-top:1rem;
+    margin-bottom:2rem;
+    margin-left:1rem;
+}
+
+
+#job_board_content {
+    padding-left:10%;
+    margin-top:20rem;
+    padding-top:0.5rem;
+    padding-bottom:5rem;
+}
+
+.tab_contain {
+    width:95%;
+    margin-top:0;
+
+}
+
+#example-vert-tabs {
+    background:lightgray;
+}
+
+.tabs-content {
+    background:#F0F0F0;
+}
+
+#button_industry {
+    float:right;
+    width:6rem;
+}
+
+.tab_contain {
+    width:95%;
+    margin-top:0;
+
+}
+
+.vert_tabs {
+    background-color:lightgray;
+    overflow-x:auto;
+    overflow-y:hidden;
+    display:-webkit-box;
+    display:-moz-box;
+}
+.vert_tabs > li {
+    float:none;
+}
+.tabs a {
+    text-align:center;
+    padding-top:0.5rem;
+    padding-bottom:0.3rem;
+}
+#vert_con {
+    background:#E2EFDE;
+    height:auto;
+}
+
+#title_bar {
+    background-color:#B0E0E6;
+    text-align:center;
+    width:101.5%;
+    height:2.5rem;
+    margin-left:-0.7%;
+
+    margin-top:-0.5%;
+}
+
+.detail_container {
+    width:101.5%;
+    height:auto;
+    margin:0;
+    padding-top:0.5rem;
+    background:whitesmoke;
+    padding-bottom:0.5rem;
+    margin-left:-0.7%;
+    border-style:solid;
+    border-width:thick;
+    border-color:#B0E0E6;
+
+}
+
+#skill_bar {
+    background-color:indianred;
+    height:2.5rem;
+}
+
+#skills {
+    float:left;
+    height:16.5rem;
+    overflow-y:scroll;
+}
+
+#text {
+    padding-top:0.5rem;
+    padding-left:0rem;
+    padding-right:1rem;
+    padding-bottom:0.5rem;
+    height:16.5rem;
+    background:white;
+    overflow-y:scroll;
+}
+
+
+.tab_applied {
+    background-color:lightgreen;
+}
+.tab_applied .is-active {
+    background-color:lightgreen !important;
+}
+.tab_applied:hover {
+    background-color:limegreen !important;
+}
+
+.tip {
+    margin-top:0.4rem;
+
+}
+.tip a {
+    float:right;
+    margin-right:4.5rem;
+}
+
+.sched_link {
+    margin-top:2rem;
+    margin-right:4rem;
+    float:right;
+    width:15%;
+    height:8%;
+
+}
+a:link, a:hover, a:active, a:visited {
+    text-decoration: none;
+}
+
+#banner_top, .top-bar-left, .logo, .menu>li {
+    background-color: #74828f;
+}
+#menu_bar {
+    border-top:solid medium whitesmoke;
+    background:dimgray;
+}
+#menu_bar>h5 {
+    color:whitesmoke;
+}
+.footer {
+    background-color: #74828f;
+    padding: 2rem 4rem;
+    text-align: center;
+    color: #fff;
+}
+.footer i {
+    font-size: 3.3rem;
+    padding:0.5rem;
+}
+
+.footer h4 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+    margin-bottom: 10px;
+}
+.footer h5 {
+    font-size:1.2rem;
+    line-height:170%;
+}
+.footer p, .footer a {
+    font-weight: 300;
+    font-size: .8em;
+    color: #fff;
+}
+
+.footer-links {
+    list-style-type:none;
+    font-size:1rem;
+}
+
+.footer-links li {
+    margin-top: .5em;
+    margin-left:-1rem;
+}

@@ -1,0 +1,26 @@
+#!/bin/ksh
+
+echo "node createSchema.js"
+node createSchema.js
+echo
+
+echo "node createUserAndProfileTable.js"
+node createUserAndProfileTable.js
+echo
+
+echo "node createMediaObjectTable.js"
+node createMediaObjectTable.js
+echo
+
+echo "node createContactsTable.js"
+node createContactsTable.js
+echo
+
+echo "node createEventsTable.js"
+node createEventsTable.js
+echo
+
+echo "node createJobBoardAndInternApplicationTable.js"
+node createJobBoardAndInternApplicationTable.js
+echo
+

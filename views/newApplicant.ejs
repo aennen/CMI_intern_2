@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Applicant Profile</title>
+    <link rel='stylesheet' href="stylesheets/vendor/bootstrap.min.css" />
+    <link rel='stylesheet' href='stylesheets/vendor/foundation.min.css' />
+    <link rel='stylesheet' href='stylesheets/vendor/motion-ui.css' />
+    <link rel='stylesheet' href='stylesheets/foundation-icons/foundation-icons.css' />
+    <link rel="stylesheet" href="stylesheets/applicantProfile.css" />
+    <script src="javascripts/vendor/modernizr.js"></script>
+</head>
+<body>
+<!----------------------------create profile modal------------------------------->
+<!-------------------HIDDEN UNTIL USER CLICKS NEW APPLICANT---------------------->
+<h3><strong>New Applicant Profile</strong></h3>
+<div class="userProfileForm">
+    <form action="/userData" method="POST">
+        <fieldset class="fieldset">
+            <legend><h5><strong>Resume</strong></h5></legend>
+            <div class=" expanded row">
+                <div class=" small-12 large-8 large-centered columns">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"></div>
+                                        </div>
+                                        <button class="btn btn-lg upload-btn" type="button">Upload File</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="upload-input" type="file" name="uploads[]" multiple="multiple"><br>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend><h5><strong>Personal</strong></h5></legend>
+            <div class=" expanded row">
+                <div class="small-5 large-4 large-offset-2 columns">
+                    <label><h6>First Name</h6></label>
+                    <input type="text" placeholder="First" name="nameFirst"  />
+                </div>
+                <div class="small-7 large-4 columns end">
+                    <label><h6>Last Name</h6></label>
+                    <input type="text" placeholder="Last" name="nameLast" />
+                </div>
+            </div>
+            <div class="expanded row">
+                <div class="small-12 large-8 large-offset-2 columns">
+                    <label><h6>Current Address</h6></label>
+                    <input type="text" placeholder="Street Name (Apt. #)" name="address" />
+                </div>
+            </div>
+            <div class="expanded row">
+
+                <div class="small-5 large-4 large-offset-2 columns">
+                    <input type="text" placeholder="Town/City" name="city" />
+                </div>
+                <div class="small-3 large-2 columns">
+                    <input type="text" placeholder="State" name="stateCode" />
+                </div>
+                <div class="small-4 large-2 columns end">
+                    <input type="text" placeholder="ZIP" name="zip" />
+                </div>
+            </div>
+            <div class="expanded row">
+                <div class="small-6 large-4 large-offset-2 columns">
+                    <label><h6>Email</h6></label>
+                    <input type="text" placeholder="example@gmail.com" value="<%=userEmail%>" name="email" />
+                </div>
+                <div class="small-6 large-4 columns end">
+                    <label><h6>Phone</h6></label>
+                    <input type="text" placeholder="(000) 000 - 0000" name="phone" />
+                </div>
+            </div>
+            <div class="expanded row">
+                <div class="small-6 large-3 large-offset-3 columns">
+
+                    <label><h6>US Veteran</h6></label>
+                    <input type="radio" name="usVet" value="Y" id="vet_statY" ><label for="vet_statY"><h6>Y</h6></label>
+                    <input type="radio" name="usVet" value="N" id="vet_statN" ><label for="vet_statN"><h6>N</h6></label>
+
+                </div>
+                <div class="small-6 large-3 large-offset-1 columns end">
+
+                    <label><h6>US Work Auth.</h6></label>
+                    <input type="radio" name="usAuth" value="Y" id="work_authY" ><label for="work_authY"><h6>Y</h6></label>
+                    <input type="radio" name="usAuth" value="N" id="work_authN" ><label for="work_authN"><h6>N</h6></label>
+
+                </div>
+            </div>
+
+            <div class="expanded row">
+                <div class="small-6 large-4 large-offset-2 columns">
+                    <label><h6>Industry Preference</h6>
+                        <style>
+                            select:invalid { color: darkgray; }
+                            option[value=""][disabled] { display: none; }
+                            option { color: black; }
+                        </style>
+                        <select name="industryPref" >
+                            <option value="" disabled selected hidden>Please Choose...</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Communications">Communications</option>
+                            <option value="Marketing/Advertising">Marketing/Advertising</option>
+                            <option value="HR">HR</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="small-6 large-4 columns end">
+                    <label><h6>Foreign Languages</h6>
+                        <input type="text" placeholder="Spanish , Russian . etc.." name="langSkills" />
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset" id="acadField" data-closable>
+            <legend><h5><strong>Academic</strong></h5></legend>
+            <div class="expanded row">
+                <div class="small-7 large-4 large-offset-2 columns">
+                    <label><h6>Institution</h6></label>
+                    <input type="text" name="school" placeholder="School Name">
+                </div>
+                <div class="small-5 large-4 columns end">
+                    <label><h6>Degree Level</h6></label>
+                    <style>
+                        select:invalid { color: darkgray; }
+                        option[value=""][disabled] { display: none; }
+                        option { color: black; }
+                    </style>
+                    <select name="degree" value="">
+                        <option value="" disabled selected hidden>Please Choose...</option>
+                        <option value="Associates">Associate's</option>
+                        <option value="Bachelors">Bachelor's</option>
+                        <option value="Masters">Master's</option>
+                    </select>
+                </div>
+            </div>
+            <div class="expanded row">
+                <div class="small-8 large-5 large-offset-2 columns">
+                    <label><h6>Major(s)</h6></label>
+                    <input type="text" name="major" placeholder="Field">
+                </div>
+                <div class="small-4 large-3  columns end">
+                    <label><h6>Graduation Date</h6>
+                        <input type="date" name="gradDate" placeholder="YYYY/MM/DD">
+                    </label>
+                </div>
+            </div>
+            <div class="expanded row">
+                <div class="small-12 large-8 large-offset-2 columns end">
+                    <label><h6>Area(s) of Interest</h6>
+                        <input type="text" name="interest" placeholder="Enter Interests...">
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="row expanded">
+            <div class="large-3 large-offset-3 columns">
+                <a href="/internship/home" class="secondary button expanded "><h5><< Back</h5></a>
+            </div>
+            <div class="large-3 columns end">
+                <a href="/internship/home"><button type="submit" class="success button expanded "><h5>Create Profile</h5></button></a>
+            </div>
+        </div>
+</form>
+</div>
+
+
+
+<!---------------------------end of modal------------------>
+
+<script src="javascripts/vendor/jquery.js"></script>
+<script src="javascripts/vendor/bootstrap.min.js"></script>
+<script src="javascripts/vendor/what-input.js"></script>
+<script src="javascripts/vendor/foundation.min.js"></script>
+<script src="javascripts/vendor/motion-ui.js"></script>
+<script src="javascripts/main.js"></script>
+<script src="javascripts/upload.js"></script>
+<script>
+    $(document).foundation();
+
+    $( document ).ready(function() {
+        var status = getParameterByName('status');
+        if(status == 'loggedIn'){
+            $('#fb').hide();
+        }
+    });
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
+
+</body>
+</html>

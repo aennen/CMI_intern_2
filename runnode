@@ -1,0 +1,6 @@
+#!/bin/ksh
+
+echo "node server.js 2>&1"
+
+node server.js 2>&1 >> server.log &
+

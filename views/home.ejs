@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="stylesheets/vendor/bootstrap.min.css"/>
+    <link rel='stylesheet' href='stylesheets/vendor/foundation.min.css'/>
+    <link rel='stylesheet' href='stylesheets/vendor/motion-ui.css'/>
+    <link rel='stylesheet' href='stylesheets/vendor/normalize.css'/>
+    <link rel='stylesheet' href='stylesheets/foundation-icons/foundation-icons.css'/>
+
+    <link href="stylesheets/unslider-dots.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/unslider.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/imageStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/userApplications.css" rel="stylesheet" type="text/css"/>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+
+    <script src="javascripts/vendor/jquery.js"></script>
+    <script src="javascripts/vendor/modernizr.js"></script>
+
+</head>
+<body>
+<% var doreload = 1; %>
+<div class="ct" id="t1">
+    <div class="ct" id="t2">
+        <div class="ct" id="t3">
+            <div class="ct" id="t4">
+                <div class="ct" id="t5">
+
+
+                    <!----------------------icon menu------------------------->
+                    <ul id="menu">
+                        <div class="icon_bank">
+                            <a href="#t1" onclick="window_scroll('p1')" target="_top">
+                                <li class="icon" id="uno"><i class="fi-home"></i><h6>Welcome</h6></li>
+                            </a>
+                            <a href="#t2" onclick="window_scroll('p2')" target="_top">
+                                <li class="icon" id="dos"><i class="fi-results"></i><h6>Overview</h6></li>
+                            </a>
+                            <a href="#t3" onclick="window_scroll('p3')" target="_top">
+                                <li class="icon" id="tres"><i class="fi-checkbox"></i><h6>Job Board</h6></li>
+                            </a>
+                            <a href="#t4" onclick="window_scroll('p4')" target="_top">
+                                <li class="icon" id="cuatro"><i class="fi-calendar"></i><h6>Events</h6></li>
+                            </a>
+                            <a href="#t5" onclick="window_scroll('p5')" target="_top">
+                                <li class="icon" id="cinco"><i class="fi-address-book"></i><h6>Contact</h6></li>
+                            </a>
+                        </div>
+                    </ul>
+
+                    <!--------------------------page 1-------------------->
+                    <div class="page" id="p1">
+                        <a onclick="menu_toggle()"><i class="fi-list" id="menu_link"></i></a>
+
+                        <section class="bar_header">
+                            <img src="images/logo-one-column.png" class="logo"/>
+                            <div class="dropdown profileDropdown">
+                                <button class="btn btn-default dropdown-toggle profileButton" type="button" data-toggle="dropdown"><i class="fi-torso" id="profileIcon"></i> | Profile
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="newApplicant">New Applicant</a></li>
+                                    <li><a href="editProfile">Edit</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="icon" id="welcome_icon"><i class="fi-home"></i><span class="title">Welcome</span>
+                            <p class="hint">Below you can find helpful information about what Amdocs does!</p>
+                            <section class="icon" id="down_arrow"><a href="#welcome_content" id="arrow_nav"><i class="fi-arrow-down"></i></a></section>
+                        </section>
+                        <section class="content" id="welcome_content">
+                            <div class="sect_container">
+                                <div class="media-object stack-for-small">
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <img src="images/experience-now.png" class="medium">
+                                        </div>
+                                    </div>
+                                    <div class="media-object-section">
+                                        <div class="text">
+                                            <h4><%= mediaObjectsWelcomeData[0].mediaTitle %></h4>
+                                            <hr>
+                                            <p><%= mediaObjectsWelcomeData[0].mediaText %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect_container">
+                                <div class="media-object stack-for-small">
+                                    <div class="media-object-section">
+                                        <div class="text">
+                                            <h4><%= mediaObjectsWelcomeData[1].mediaTitle %></h4>
+                                            <hr>
+                                            <p><%= mediaObjectsWelcomeData[1].mediaText %></p>
+                                        </div>
+                                    </div>
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <img src="images/amdocs-oss.png" class="medium">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect_container">
+                                <div class="media-object stack-for-small">
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <img src="images/partner-frame.png" class="medium">
+                                        </div>
+                                    </div>
+                                    <div class="media-object-section">
+                                        <div class="text">
+                                            <h4><%= mediaObjectsWelcomeData[2].mediaTitle %></h4>
+                                            <hr>
+                                            <p><%= mediaObjectsWelcomeData[2].mediaText %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect_container">
+                                <div class="media-object stack-for-small">
+                                    <div class="media-object-section">
+                                        <div class="text">
+                                            <h4><%= mediaObjectsWelcomeData[3].mediaTitle %></h4>
+                                            <hr>
+                                            <p><%= mediaObjectsWelcomeData[3].mediaText %></p>
+                                            <p><br></p>
+                                        </div>
+                                    </div>
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <img src="images/logo-orange.png" class="medium">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-------------------------page 2--------------------->
+                    <div class="page" id="p2">
+
+                        <section class="bar_header">
+                            <img src="images/logo-one-column.png" class="logo"/>
+                            <div class="dropdown profileDropdown">
+                                <button class="btn btn-default dropdown-toggle profileButton" type="button" data-toggle="dropdown"><i class="fi-torso" id="profileIcon"></i> | Profile
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="newApplicant">New Applicant</a></li>
+                                    <li><a href="myProfile">View</a></li>
+                                    <li><a href="editProfile">Edit</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="icon" id="overview_icon"><i class="fi-results"></i><span class="title">Overview</span>
+                            <p class="hint">Discover what our internship program is all about!</p>
+                            <section class="icon" id="down_arrow"><a href="#overview_content" id="arrow_nav"><i class="fi-arrow-down"></i></a></section>
+                        </section>
+
+                        <section class="content" id="overview_content">
+                            <div class="sect_container">
+                                <div class="media-object stack-for-small" id="overview_media">
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <img src="images/Interns2016.png" class="medium">
+                                        </div>
+
+                                    </div>
+                                    <div class="media-object-section">
+                                        <div class="text">
+                                            <h4 id="text_title"><%= mediaObjectsOverviewData[0].mediaTitle %></h4>
+                                            <hr>
+                                            <p><%= mediaObjectsOverviewData[0].mediaText %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="section_container">
+                                <h4>Current Positions</h4>
+                                <table class="stack" id="myTable">
+                                    <thead class="job_header">
+                                    <tr>
+                                        <th width="250" height="auto" id="job_bar"><p><strong>Job Title</strong></p></th>
+                                        <th><p><strong>Description</strong></p></th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot class="job_header">
+                                    <tr>
+                                        <th width="250" height="auto"></th>
+                                        <th><p><a href="#t3" class="button" id="button_pos" onclick="open_tab('example-vert-tabs','panel1v')">View / Apply</a></p></th>
+                                    </tr>
+                                    </tfoot>
+
+                                    <tbody>
+                                    <% for(var i = 0; i < jobBoardData.length; i++) { %>
+                                    <tr id="row<%= i + 1 %>" onclick="open_tab('example-vert-tabs','panel<%= i + 1 %>v')">
+                                        <td><a id="item<%= i + 1 %>" href=#t3>
+                                                <div>
+                                                    <p><strong><%= jobBoardData[i].projTitle %></strong></p>
+                                                </div>
+                                            </a></td>
+                                        <td><a id="item<%= i + 1 %>" href=#t3>
+                                                <div>
+                                                    <em><%= jobBoardData[i].projDescription %></em>
+                                                </div>
+                                            </a></td>
+                                    </tr>
+                                    <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="sect_container">
+                                <div class="table_title"><h4>Past Interns</h4></div>
+
+                                <div class="intern_table">
+
+                                    <ul class="tabs" data-tabs id="example-tabs">
+                                        <% for(var i = 0; i < mediaObjectsPastInternData.length; i++) { %>
+                                        <% if(i === 0) { %>
+                                        <li class="tabs-title is-active"><a href="#panel<%= i + 1 %>" aria-selected="true"
+                                                                            id="tabs_title tab<%= i + 1 %>"><%= mediaObjectsPastInternData[i].mediaTitle %></a></li>
+                                        <% } else { %>
+                                        <li class="tabs-title"><a href="#panel<%= i + 1 %>" id="tabs_title tab<%= i + 1 %>"><%= mediaObjectsPastInternData[i].mediaTitle %></a></li>
+                                        <% }} %>
+                                    </ul>
+
+                                    <div class="tabs-content" data-tabs-content="example-tabs">
+                                        <% for(var i = 0; i < mediaObjectsPastInternData.length; i++) { %>
+                                        <% if(i === 0) { %>
+                                        <div class="tabs-panel is-active" id="panel<%= i + 1 %>">
+                                            <p><%= mediaObjectsPastInternData[i].mediaText %></p>
+                                        </div>
+                                        <% } else  { %>
+                                        <div class="tabs-panel" id="panel<%= i + 1 %>">
+                                            <p><%= mediaObjectsPastInternData[i].mediaText %></p>
+                                        </div>
+                                        <% } %>
+                                        <% } %>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!page 3--------------------->
+
+                    <div class="page" id="p3">
+                        <section class="bar_header">
+                            <img src="images/logo-one-column.png" class="logo"/>
+                            <div class="dropdown profileDropdown">
+                                <button class="btn btn-default dropdown-toggle profileButton" type="button" data-toggle="dropdown"><i class="fi-torso" id="profileIcon"></i> | Profile
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="newApplicant">New Applicant</a></li>
+                                    <li><a href="myProfile">View</a></li>
+                                    <li><a href="editProfile">Edit</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="icon" id="job_board_icon"><i class="fi-checkbox"></i><span class="title">Job Board</span>
+                            <p class="hint">Apply for our current positions here! If you haven't already, please create a <a href="newApplicant">new applicant profile</a>!</p>
+                            <section class="icon" id="down_arrow"><a href="#app_container" id="arrow_nav" target="_top"><i class="fi-arrow-down"></i></a></section>
+                        </section>
+
+                        <! ---- iterate for the tab views ----->
+                        <section class="content" id="job_board_content">
+
+                            <div class="row expanded" id="app_container">
+
+                                <ul class="tabs vert_tabs" id="example-vert-tabs" data-tabs>
+
+                                    <% for(var i = 0; i < jobBoardData.length; i++) { %>
+
+                                    <! AJE add check to see if they applied --------------------->
+                                    <% var colorString = "Black"; %>
+                                    <% for(var z = 0; z < appFolderData.length; z++) { %>
+                                    <% if(typeof appFolderData[z].idProject_fk !== 'undefined' && (appFolderData[z].idProject_fk === (jobBoardData[i].idProject))) { %>
+                                    <% colorString = "Blue"; %>
+                                    <% } %>
+                                    <% } %>
+
+                                    <% if(i === 0) { %>
+                                    <li class="tabs-title is-active"><a href="#panel<%= i + 1 %>v"><h6><font color="<%= colorString %>"><%= jobBoardData[i].projTitle %></font></h6></a></li>
+                                    <% } else { %>
+                                    <li class="tabs-title"><a href="#panel<%= i + 1 %>v"><h6><font color="<%= colorString %>"><%= jobBoardData[i].projTitle %> </font></h6></a></li>
+                                    <% }} %>
+
+                                </ul>
+
+                                <div class="tabs-content" data-tabs-content="example-vert-tabs" id="vert_con">
+
+                                    <% for(var i = 0; i < jobBoardData.length; i++) { %>
+                                    <div class="tabs-panel <% if(i === 0 ) { %>is-active<% } %>" id="panel<%= i + 1 %>v">
+
+                                        <div class="title-bar" id="title_bar">
+                                            <form action='myFolder' method="POST">
+                                                <input type="text" value="<%= jobBoardData[i].idProject %>" name="idProject_fk" style="display:none;"/>
+                                                <div class="title-bar-left"><h5><strong><%= jobBoardData[i].projTitle %> / <%= jobBoardData[i].projManager %></strong></h5></div>
+                                                <div class="title-bar-right">
+                                                    <button type="submit" onclick="applyApplicant()">
+
+                                                        <! AJE add check to see if they applied --------------------->
+                                                        <% var applyString = "Apply"; %>
+                                                        <% for(var z = 0; z < appFolderData.length; z++) { %>
+                                                        <% if(appFolderData[z].idProject_fk !== 'undefined' && (appFolderData[z].idProject_fk === (jobBoardData[i].idProject))) { %>
+                                                        <% applyString = "Applied"; %>
+                                                        <% } %>
+                                                        <% } %>
+
+                                                        <a class="success button"
+                                                           style="width:300%;padding:1rem;margin-left:-200%;color:#4e4e4f;margin-bottom:0rem;"><strong><%= applyString %></strong></a></button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="detail_container">
+                                            <div class="row">
+                                                <div class="large-12 medium-12 columns">
+                                                    <div class="title-bar" id="skill_bar">
+                                                        <div class="title-bar-left"><h6>Project Detail</h6></div>
+                                                        <div class="title-bar-right"></div>
+                                                    </div>
+                                                    <div id="text">
+                                                        <h6><strong>Description</strong></h6>
+
+                                                        <%= jobBoardData[i].projDescription %>
+
+                                                        <ol>
+                                                            <% projBrief = jobBoardData[i].projBrief; %>
+                                                            <% listItems = projBrief.split(' | '); %>
+                                                            <% for(var j = 0; j < listItems.length; j++) { %>
+                                                            <li><%= listItems[j] %></li>
+                                                            <% } %>
+
+                                                        </ol>
+                                                        <hr>
+                                                        <h6><strong>Duties</strong></h6>
+
+                                                        <%= jobBoardData[i].duties %>
+                                                        <hr>
+
+                                                        <h6><strong>Tasks</strong></h6>
+                                                        <ul>
+                                                            <% tasks = jobBoardData[i].tasks; %>
+                                                            <% taskItems = tasks.split(' | '); %>
+                                                            <% for(var j = 0; j < taskItems.length; j++) { %>
+                                                            <li><%= taskItems[j] %></li>
+                                                            <% } %>
+                                                        </ul>
+                                                        <hr>
+                                                        <h6><strong>Education &amp; Experience</strong></h6>
+
+                                                        <%= jobBoardData[i].eduExp %>
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <! page 4--------------------->
+                    <div class="page" id="p4">
+                        <section class="bar_header">
+                            <img src="images/logo-one-column.png" class="logo"/>
+                            <div class="dropdown profileDropdown">
+                                <button class="btn btn-default dropdown-toggle profileButton" type="button" data-toggle="dropdown"><i class="fi-torso" id="profileIcon"></i> | Profile
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="newApplicant">New Applicant</a></li>
+                                    <li><a href="myProfile">View</a></li>
+                                    <li><a href="editProfile">Edit</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="icon" id="calendar_icon">
+                            <i class="fi-calendar"></i>
+                            <span class="title">Events</span>
+                            <p class="hint">Find out information on Career Fairs and interviews!</p>
+                            <section class="icon" id="down_arrow"><a href="#events_content" id="arrow_nav"><i class="fi-arrow-down" id="arrow_nav"></i></a></section>
+                        </section>
+
+                        <section class="content" id="events_content">
+                            <div class="row">
+                                <div class="large-11 large-centered columns">
+                                    <h3>Upcoming Events:</h3>
+                                </div>
+                            </div>
+                            <table class="stack">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% for (var i = 0; i < eventsData.length; i++ ) { %>
+                                <tr>
+                                    <td><%= eventsData[i].eventTitle %></td>
+                                    <td><%= eventsData[i].eventLocation %></td>
+                                    <td><%= eventsData[i].eventDate %></td>
+                                    <td><%= eventsData[i].startTime %> - <%= eventsData[i].endTime %></td>
+                                </tr>
+                                <% } %>
+                                </tbody>
+                            </table>
+
+                        </section>
+                    </div>
+
+                    <!-------------------------page 5--------------------->
+                    <div class="page" id="p5">
+                        <section class="bar_header">
+                            <img src="images/logo-one-column.png" class="logo"/>
+                            <div class="dropdown profileDropdown">
+                                <button class="btn btn-default dropdown-toggle profileButton" type="button" data-toggle="dropdown"><i class="fi-torso" id="profileIcon"></i> | Profile
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="newApplicant">New Applicant</a></li>
+                                    <li><a href="myProfile">View</a></li>
+                                    <li><a href="editProfile">Edit</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="icon" id="contact_icon">
+                            <i class="fi-address-book"></i>
+                            <span class="title">Contact</span>
+                            <p class="hint">Reach out to members of our Human Resources department!</p>
+                            <section class="icon" id="down_arrow"><a href="#contact_content" id="arrow_nav"><i class="fi-arrow-down" id="arrow_nav"></i></a></section>
+                        </section>
+
+                        <section class="content" id="contact_content">
+                            <div style="">
+                                <div class="row">
+                                    <div class="large-4 columns large-centered">
+                                        <img class="img-circle" src="images/user-default.png"/>
+                                    </div>
+                                </div>
+                                <div class="row" id="contactName">
+                                    <div class="large-6 columns large-centered">
+                                        <h2>Amanda Ressel</h2>
+                                    </div>
+                                </div>
+                                <div class="row" id="contactTitle">
+                                    <div class="large-6 columns large-centered">
+                                        <h3><em>Program Administrator</em></h3>
+                                    </div>
+                                </div>
+                                <div class="row" id="contactPhone">
+                                    <div class="large-6 columns large-centered">
+                                        <h4>(217) 353 - 7520</h4>
+                                    </div>
+                                </div>
+                                <div class="row" id="contactEmail">
+                                    <div class="large-6 columns large-centered">
+                                        <h4><a>internships@amdocs.com</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <! CURRENT APPLICATION BANK CODE ------------------------------------------------>
+
+                    <div class="appContainer-fixed">
+                        <i class="fi-folder folder__icon" width="30px" height="30px" viewBox="0 0 35 35"></i>
+                        <h3> | My Applications</h3>
+                        <div class="appBank__count"><%= appFolderData.length %></div>
+                        <div class="appBank">
+                            <a class="appBank__button" id="appBankButton"><!-- Fallback location -->
+                                <span class="appBank__text">
+							        <span class="appBank__text-inner appBank__initial-text">View Folder</span>
+							        <span class="appBank__text-inner appBank__final-text"><div class="skillsFormButton"><i class=" fi-checkbox"></i> Submit </div></span>
+						        </span>
+                            </a>
+
+                            <div class="appBank__results">
+                                <div class="appBank__results-inner">
+                                    <div class="appBank__summary">
+                                        <div class="expanded row">
+                                            <div class="large-12 columns">
+                                                <div class="panel panel-primary currentAppPanel">
+                                                    <div class="panel-heading">
+                                                        <h5>Current Applications</h5>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <div class="large-5 small-12 columns">
+                                                                <div class="panel panel-info userDetailPanel">
+                                                                    <div class="panel panel-heading">
+                                                                        <h6>Personal Information</h6>
+                                                                    </div>
+                                                                    <div class="panel panel-body">
+
+                                                                        <% if (!userData) { %>
+                                                                        <div class="row">
+                                                                            <div class="large-10 columns large-centered">
+                                                                                <h5 style="color:dimgray;">If this is your first time visiting, please create a <a href="newApplicant">New Applicant
+                                                                                        Profile</a>!</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p style="color:dimgray;text-align:left;">
+                                                                            <strong>Name</strong>: <br>
+                                                                            <strong>Resume</strong>: <br>
+                                                                            <strong>Email</strong>: <br>
+                                                                            <strong>Address</strong>: <br>
+                                                                            <strong>City</strong>: <br>
+                                                                            <strong>State</strong>: <br>
+                                                                            <strong>ZIP</strong>: <br>
+                                                                            <strong>Phone</strong>: <br>
+                                                                            <strong>Veteran Status</strong>: <br>
+                                                                            <strong>US Work Authorization</strong>: <br>
+                                                                            <strong>Industry Preference</strong>: <br>
+                                                                            <strong>Foreign Language Skills</strong>: <br>
+                                                                            <strong>School/University</strong>: <br>
+                                                                            <strong>Degree</strong>: <br>
+                                                                            <strong>Major</strong>: <br>
+                                                                            <strong>Interests</strong>: <br>
+                                                                            <strong>Expected Graduation</strong>:
+                                                                        </p>
+                                                                        <% } else { %>
+                                                                        <% console.log("AJE : applicant view : " + userData.email); %>
+                                                                        <p style="color:dimgray;text-align:left;">
+                                                                            <strong>Name</strong>: <%= userData.nameFirst %> <%= userData.nameLast %><br>
+                                                                            <strong>Resume</strong>: <a href="uploads/?fileName=<%= userData.resLink %>"><%= userData.resLink %></a><br>
+                                                                            <strong>Email</strong>: <%= userData.email %><br>
+                                                                            <strong>Address</strong>: <%= userData.address %><br>
+                                                                            <strong>City</strong>: <%= userData.city %><br>
+                                                                            <strong>State</strong>: <%= userData.stateCode %><br>
+                                                                            <strong>ZIP</strong>: <%= userData.zip %><br>
+                                                                            <strong>Phone</strong>: <%= userData.phone %><br>
+                                                                            <strong>Veteran Status</strong>: <%= userData.usVet %><br>
+                                                                            <strong>US Work Authorization</strong>: <%= userData.usAuth %><br>
+                                                                            <strong>Industry Preference</strong>: <%= userData.industryPref %><br>
+                                                                            <strong>Foreign Language Skills</strong>: <%= userData.langSkills %><br>
+                                                                            <strong>School/University</strong>: <%= userData.school %><br>
+                                                                            <strong>Degree</strong>: <%= userData.degree %><br>
+                                                                            <strong>Major</strong>: <%= userData.major %><br>
+                                                                            <strong>Interests</strong>: <%= userData.interest %><br>
+                                                                            <strong>Expected Graduation</strong>: <%= userData.gradDate %>
+                                                                        </p>
+                                                                        <% } %>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="large-7 small-12 columns">
+                                                                <div class="panel panel-info skillPanel">
+                                                                    <div class="panel panel-heading">
+                                                                        <h6>Applicant Skills - Please update sliders for the project you are intereseted in</h6>
+                                                                    </div>
+                                                                    <div class="panel panel-body">
+                                                                        <% if(!appFolderData.length) { %>
+                                                                        <div class="row">
+                                                                            <div class="large-10 columns large-centered">
+                                                                                <h5 style="color:dimgrey"> To apply for an open position, please check out our <a href="#t3">Job Board</a> to see what's
+                                                                                    available!</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <% } else { %>
+
+                                                                        <form action="submitApp" method="POST" class="skillsForm">
+                                                                            <ul class="accordion" data-accordion data-allow-all-closed="true">
+                                                                                <!-- list out applicant skills for each applied project -->
+                                                                                <% for (var i = 0; i < appFolderData.length ; i++) { %>
+                                                                                <li class="accordion-item" data-accordion-item>
+                                                                                    <a href="#" class="accordion-title">Project <%= appFolderData[i].project %></a>
+                                                                                    <div class="accordion-content" data-tab-content>
+                                                                                        <div class="row">
+                                                                                            <div class="large-12 columns">
+                                                                                                <div class="panel panel-default jobPanel">
+                                                                                                    <div class="panel-heading">
+                                                                                                        <h6 style="color:dimgray;text-align:center;">Experience Level: None - Advanced</h6>
+                                                                                                        <input type="hidden" name="project" value="<%= appFolderData[i].idProject_fk %>">
+                                                                                                        <input type="hidden" name="userid" value="<%= appFolderData[i].id_fk %>">
+                                                                                                        <% var idx = "deleteapp-" + i %>
+                                                                                                        <button class="appBank__action" name="action" value="<%= idx %>"><i class="icon fi-trash"></i>
+                                                                                                        </button>
+                                                                                                    </div>
+                                                                                                    <div class="panel-body">
+                                                                                                        <div class="row skillsRow">
+                                                                                                            <!-- slider skills rendering -->
+                                                                                                            <% for (var j = 0; j < splitSkills[i].length; j++) { %>
+                                                                                                            <div class="large-6 small-12 columns">
+                                                                                                                <label><%= splitSkills[i][j] %></label>
+                                                                                                                <div class="slider" id="skill-slide" data-slider
+                                                                                                                     data-initial-start="<%= splitSkillValues[i][j] %>" data-step="10">
+                                                                                                        <span class="slider-handle" data-slider-handle role="slider" tabindex="1"
+                                                                                                              aria-controls="sliderOutput<%= i + 1 %>_<%= j + 1 %>"></span>
+                                                                                                                    <span class="slider-fill" data-slider-fill></span>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="small-2 columns" style="">
+                                                                                                                <input type="text"
+                                                                                                                       name="projects[<%= appFolderData[i].project %>][<%= splitSkills[i][j] %>]"
+                                                                                                                       id="sliderOutput<%= i + 1 %>_<%= j + 1 %>" style="display:none;"/>
+                                                                                                            </div>
+                                                                                                            <% } %>
+                                                                                                            <!-- <input type="text" name="project" value="<%= appFolderData[i].project %>" style="display:none;" /> -->
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <% } %>
+                                                                        </form>
+                                                                        <% } %>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /checkout__summary -->
+                                    <button class="appBank__close appBank__cancel" onclick="closeAppBank();"><i class="icon fi-x"></i>Close</button>
+                                </div><!-- /checkout__order-inner -->
+                            </div><!-- /checkout__order -->
+
+                        </div><!-- /checkout -->
+                        <div class="appBank__count"><%= appFolderData.length %></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------------------end of page------------------------------>
+<script src="javascripts/vendor/bootstrap.min.js"></script>
+<script src="javascripts/vendor/foundation.min.js"></script>
+<script src="javascripts/vendor/what-input.js"></script>
+<script src="javascripts/vendor/motion-ui.js"></script>
+<script src="javascripts/main.js"></script>
+<script>
+
+    //$(document).foundation();
+
+    $(document).ready(function () {
+        var status = getParameterByName('status');
+        if (status == 'loggedIn') {
+            $('#fb').hide();
+        }
+    })
+    $(document).foundation({
+        accordion: {
+            callback: function (accordion) {
+                $(document).foundation('reflow');
+            }
+        }
+    });
+
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
+
+<script src="javascripts/classie.js"></script>
+<script src="javascripts/monthly.js"></script>
+<script src="javascripts/my_calendar.js"></script>
+<script src="javascripts/window_scroll.js"></script>
+<scripts src="javascripts/deleteJobApp.js"></scripts>
+<!- AJE changed from scripts to script, think its a bug >
+<script src="javascripts/open_tab.js"></script>
+<script src="javascripts/menu_toggle.js"></script>
+<script src="javascripts/unslider-min.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $('.automatic-slider').unslider({
+            autoplay: true,
+            arrows: {
+                //  Unslider default behaviour
+                prev: '<a class="unslider-arrow prev"></a>',
+                next: '<a class="unslider-arrow next"></a>',
+            }
+        });
+    });
+</script>
+<script>
+    (function () {
+
+        console.log("FUNTION :");
+        var container = document.getElementById('appContainer-fixed--highlight');
+        [].slice.call(document.querySelectorAll('.appBank')).forEach(function (el) {
+            var openCtrl = el.querySelector('.appBank__button'),
+                closeCtrl = el.querySelector('.appBank__cancel');
+
+            openCtrl.addEventListener('click', function (ev) {
+                ev.preventDefault();
+                classie.add(el, 'appBank--active');
+                classie.add(container, 'appContainer-fixed--highlight');
+            });
+
+            closeCtrl.addEventListener('click', function () {
+                classie.remove(el, 'appBank--active');
+                classie.remove(container, 'appContainer-fixed--highlight');
+            });
+        });
+    })();
+</script>
+<script>
+    $(document).ready(function () {
+        var pos = 0;
+        var elem = new Foundation.Slider($('#skill-slide'), {initialStart: pos});
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".skillsFormButton").click(function () {
+            $('form.skillsForm').submit();
+        });
+    });
+</script>
+<script>
+    function deleteApp(jobID) {
+        window.location.assign("http://www.localhost:3000/deleteApp/?jobID=" + jobID);
+    }
+    function deleteJob(jobId) {
+        console.log("Delete button clicked!");
+        var form = document.createElement("form");
+        form.method = 'post';
+        form.action = '/deleteApp/?jobID=' + jobId;
+        var input = document.createElement('input');
+        input.type = "text";
+        input.name = "idProject_fk";
+        input.value = jobId;
+        form.appendChild(input);
+        form.submit();
+    }
+</script>
+
+<script>
+    document.getElementById('appBankButton').click();
+</script>
+
+<script>
+    function applyApplicant() {
+        console.log("***** Fire popup");
+        document.getElementById('appBankButton').click();
+    }
+</script>
+
+</body>
+</html>
